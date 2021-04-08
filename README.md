@@ -18,10 +18,19 @@ into a "micro tank".
 - Autonomous mode driveing using an ultrasonic range finder to detect obstacles
 
 ## Wirering
-|-|-|
-|L298N pin|Arduino pin|
-|enA|D9|
-|enB|D10|
+The motor power supply goes on the 12V and GND pins of the L298N. The GND of the power supply and the Arduino need to be also connected.
+| L298N pin | Arduino pin |
+| --------- | ----------- |
+| enA       | D9          |
+| enB       | D10         |
+| IN1       | A0          |
+| IN2       | A1          |
+| IN3       | A2          |
+| IN4       | A3          |
+| 5V        | 5V          |
+| GND       | GND         |
+
+
 
 
 ## Progression

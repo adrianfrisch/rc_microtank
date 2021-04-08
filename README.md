@@ -18,7 +18,7 @@ into a "micro tank".
 - Make it remote controlled via Bluetooth
 - Autonomous mode driveing using an ultrasonic range finder to detect obstacles
 
-## Wirering
+## Wiring
 The motor power supply goes on the 12V and GND pins of the L298N. The GND of the power supply and the Arduino need to be also connected.
 The two gear motors are connected to the two outputs of the L298N.
 Arduino is connected as follows:

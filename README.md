@@ -17,5 +17,15 @@ into a "micro tank".
 - Make it remote controlled via Bluetooth
 - Autonomous mode driveing using an ultrasonic range finder to detect obstacles
 
+## Wirering
+|-|-|
+|L298N pin|Arduino pin|
+|enA|D9|
+|enB|D10|
+
+
+## Progression
+2021-04-08: Initial setup of code. 
+
 ## 3D-Printfiles
 You can find the files for the microtank on [https://www.thingiverse.com/thing:4820194](Thingiverse).

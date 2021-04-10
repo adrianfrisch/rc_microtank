@@ -1,5 +1,6 @@
 # rc_microtank
 Arduino Code for the RC controlled Microtank
+<a href="https://drive.google.com/uc?export=view&id=1334GY6rUDta5F0j1D3IIxgwWuF2fBBTM"><img src="https://drive.google.com/uc?export=view&id=1334GY6rUDta5F0j1D3IIxgwWuF2fBBTM" style="width: 480px; max-width: 100%; height: auto" title="Click for the larger version." /></a>
 
 ## Remark
 This is work in progress. I currently assembling the hardware. Code will follow progress on the hardware.
@@ -17,7 +18,7 @@ into a "micro tank".
 - Make it remote controlled via Bluetooth
 - Autonomous mode driveing using an ultrasonic range finder to detect obstacles
 
-## Wirering
+## Wiring
 The motor power supply goes on the 12V and GND pins of the L298N. The GND of the power supply and the Arduino need to be also connected.
 The two gear motors are connected to the two outputs of the L298N.
 Arduino is connected as follows:

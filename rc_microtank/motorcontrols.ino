@@ -1,16 +1,13 @@
 #define enA 9
-#define in1 14
-#define in2 15
+#define in1 15
+#define in2 14
 #define enB 10
 #define in3 16
 #define in4 17
 
-byte speedRight;
-byte speedLeft;
+byte motorSpeed=255;
 
 void enableMotors(){
-  speedLeft = 120;
-  speedRight= 120;
 
   pinMode(enA, OUTPUT);
   pinMode(enB, OUTPUT);
@@ -20,30 +17,148 @@ void enableMotors(){
   pinMode(in4, OUTPUT);
 }
 
+void goLeft(){
+   // turn on Motor A
+  digitalWrite(in1, HIGH);
+  digitalWrite(in2, LOW);
+  analogWrite(enA, motorSpeed);
+  // turn on motor B
+  analogWrite(enB, 0);  
+}
+
+void goRight(){
+  // turn on Motor A
+  analogWrite(enA, 0);
+  // turn on motor B
+  digitalWrite(in3, HIGH);
+  digitalWrite(in4, LOW);
+  analogWrite(enB, motorSpeed);
+}
+void turnLeft(){
+   // turn on Motor A
+  digitalWrite(in1, HIGH);
+  digitalWrite(in2, LOW);
+  analogWrite(enA, motorSpeed);
+  // turn on motor B
+  digitalWrite(in3, LOW);
+  digitalWrite(in4, HIGH);
+  analogWrite(enB, motorSpeed);
+}
+
+void turnRight(){
+   // turn on Motor A
+  digitalWrite(in1, LOW);
+  digitalWrite(in2, HIGH);
+  analogWrite(enA, motorSpeed);
+  // turn on motor B
+  digitalWrite(in3, HIGH);
+  digitalWrite(in4, LOW);
+  analogWrite(enB, motorSpeed);
+}
+
 void goForward()
 {
   // turn on Motor A
   digitalWrite(in1, HIGH);
   digitalWrite(in2, LOW);
-  analogWrite(enA, speedRight);
+  analogWrite(enA, motorSpeed);
   // turn on motor B
   digitalWrite(in3, HIGH);
   digitalWrite(in4, LOW);
-  analogWrite(enB, speedLeft);
+  analogWrite(enB, motorSpeed);
 }
 
 void goBackward(){
   // turn on Motor A
   digitalWrite(in1, LOW);
   digitalWrite(in2, HIGH);
-  analogWrite(enA, speedRight);
+  analogWrite(enA, motorSpeed);
   // turn on motor B
   digitalWrite(in3, LOW);
   digitalWrite(in4, HIGH);
-  analogWrite(enB, speedLeft);
+  analogWrite(enB, motorSpeed);
 }
 
 void stopMotors(){
     analogWrite(enA, 0);
     analogWrite(enB, 0);
 }
+
+
+void executeCommand(byte input){
+  switch (input){
+      case 'D': // Disconnected Phone. Stop car.
+        stopMotors();
+        break;
+      case 'F': // Forward
+        goForward();
+        break;
+      case 'S': // Stop
+        stopMotors();
+        break;
+      case 'B': // Back
+        goBackward();
+        break;
+      case 'L': // Left
+        turnLeft();
+        break;
+      case 'R': // Right
+        turnRight();
+        break;
+      case 'G': // Front+Left
+        goLeft();
+        break;
+      case 'I': // Front+Right
+        goRight();
+        break;
+      case 'H': // Back+Left
+      case 'J': // Back+Right
+      case 'U': // Backlights on
+      case 'u': // Backlights off
+      case 'W': // Frontlights on
+      case 'w': // Frontlights off
+      case 'V': // Sound on
+      case 'v': // Sound off
+      case 'X': // Special on
+      case 'x': // Special off
+
+      
+      case '0': 
+        //motorSpeed = 110;
+        break;
+      case '1':
+        //motorSpeed = 120;
+        break;
+      case '2':
+        //motorSpeed = 135;
+        break;
+      case '3':
+        //motorSpeed = 150;
+        break;
+      case '4':
+        //motorSpeed = 165;
+        break;
+      case '5':
+        //motorSpeed = 180;
+        break;
+      case '6':
+        //motorSpeed = 195;
+        break;
+      case '7':
+        //motorSpeed = 210;
+        break;
+      case '8':
+        //motorSpeed = 225;
+        break;
+      case '9':
+        //motorSpeed = 240;
+        break;
+      case 'q': 
+        //motorSpeed = 255;
+        break;
+      default: 
+        break;
+  }
+}
+
+

@@ -55,7 +55,7 @@ The HC-05 modul for the communication is connected as follows:
 
 ## Progression
 2021-04-08: Initial setup of code. 
-2021-04-12: Manual steering via Bluetooth completed. Using App [https://play.google.com/store/apps/details?id=braulio.calle.bluetoothRCcontroller](Bluetooth RC Controller).
+2021-04-12: Manual steering via Bluetooth completed. Using App [Bluetooth RC Controller](https://play.google.com/store/apps/details?id=braulio.calle.bluetoothRCcontroller).
 
 ## 3D-Printfiles
-You can find the files for the microtank on [https://www.thingiverse.com/thing:4820194](Thingiverse).
+You can find the files for the microtank on [Thingiverse](https://www.thingiverse.com/thing:4820194).

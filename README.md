@@ -2,6 +2,8 @@
 Arduino Code for the RC controlled Microtank
 <a href="https://drive.google.com/uc?export=view&id=13jPakLTa89Bc7pzKFUDFo72GJchOpb2N"><img src="https://drive.google.com/uc?export=view&id=13jPakLTa89Bc7pzKFUDFo72GJchOpb2N" style="width: 480px; max-width: 100%; height: auto" title="Click for the larger version." /></a>
 
+The image shows an early version of the microtank. The battery has been swapped to a 2S LiPo in the meantime. 
+
 ## Remark
 This is work in progress. I currently assembling the hardware. Code will follow progress on the hardware.
 
@@ -17,6 +19,14 @@ into a "micro tank".
 - Make it small enough to be printed on almost any printer
 - Make it remote controlled via Bluetooth
 - Autonomous mode driving using an ultrasonic range finder to detect obstacles
+
+## Materials required
+- Print parts
+- Arduino Nano
+- HC-05 Bluetooth module
+- L298N dual motor driver
+- 2 gear motors e.g. Adafruit-DC-Gearbox-Motor-TT or similar
+- M3 Rods nuts and washers 
 
 ## Wiring
 The motor power supply goes on the 12V and GND pins of the L298N. The GND of the power supply and the Arduino need to be also connected.

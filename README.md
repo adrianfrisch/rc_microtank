@@ -16,7 +16,7 @@ into a "micro tank".
 - Arduino Nano as Brains
 - Make it small enough to be printed on almost any printer
 - Make it remote controlled via Bluetooth
-- Autonomous mode driveing using an ultrasonic range finder to detect obstacles
+- Autonomous mode driving using an ultrasonic range finder to detect obstacles
 
 ## Wiring
 The motor power supply goes on the 12V and GND pins of the L298N. The GND of the power supply and the Arduino need to be also connected.
@@ -33,11 +33,19 @@ Arduino is connected as follows:
 | 5V        | 5V          |
 | GND       | GND         |
 
+The HC-05 modul for the communication is connected as follows:
+| HC05 | Arduino |
+| --- | --- |
+| 5V | 5V |
+| Gnd | Gnd |
+| RX | D3 |
+| TX | D2 |
 
 
 
 ## Progression
 2021-04-08: Initial setup of code. 
+2021-04-12: Manual steering via Bluetooth completed. Using App [https://play.google.com/store/apps/details?id=braulio.calle.bluetoothRCcontroller](Bluetooth RC Controller).
 
 ## 3D-Printfiles
 You can find the files for the microtank on [https://www.thingiverse.com/thing:4820194](Thingiverse).

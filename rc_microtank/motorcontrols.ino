@@ -1,3 +1,7 @@
+/*
+ * Motor controls. Motor A is on the right side of the vehicle. 
+ * 
+ */
 #define enA 9
 #define in1 15
 #define in2 14
@@ -5,10 +9,11 @@
 #define in3 16
 #define in4 17
 
-byte motorSpeed=255;
+// Always maximum speed currently.
+byte motorSpeed=110;
 
 void enableMotors(){
-
+  // Switch on all output pins for the motor control.
   pinMode(enA, OUTPUT);
   pinMode(enB, OUTPUT);
   pinMode(in1, OUTPUT);
@@ -79,6 +84,24 @@ void goBackward(){
   analogWrite(enB, motorSpeed);
 }
 
+void goBackRight(){
+  // turn on Motor A
+  analogWrite(enA, 0);
+  // turn on motor B
+  digitalWrite(in3, LOW);
+  digitalWrite(in4, HIGH);
+  analogWrite(enB, motorSpeed);
+}
+
+void goBackLeft(){
+    // turn on Motor A
+  digitalWrite(in1, LOW);
+  digitalWrite(in2, HIGH);
+  analogWrite(enA, motorSpeed);
+  // turn on motor B  
+  analogWrite(enB, 0);
+}
+
 void stopMotors(){
     analogWrite(enA, 0);
     analogWrite(enB, 0);
@@ -112,7 +135,11 @@ void executeCommand(byte input){
         goRight();
         break;
       case 'H': // Back+Left
+        goBackLeft();
+        break;
       case 'J': // Back+Right
+        goBackRight();
+        break;
       case 'U': // Backlights on
       case 'u': // Backlights off
       case 'W': // Frontlights on
@@ -122,41 +149,42 @@ void executeCommand(byte input){
       case 'X': // Special on
       case 'x': // Special off
 
-      
+
       case '0': 
-        //motorSpeed = 110;
+        motorSpeed = 110;
         break;
       case '1':
-        //motorSpeed = 120;
+        motorSpeed = 120;
         break;
       case '2':
-        //motorSpeed = 135;
+        motorSpeed = 135;
         break;
       case '3':
-        //motorSpeed = 150;
+        motorSpeed = 150;
         break;
       case '4':
-        //motorSpeed = 165;
+        motorSpeed = 165;
         break;
       case '5':
-        //motorSpeed = 180;
+        motorSpeed = 180;
         break;
       case '6':
-        //motorSpeed = 195;
+        motorSpeed = 195;
         break;
       case '7':
-        //motorSpeed = 210;
+        motorSpeed = 210;
         break;
       case '8':
-        //motorSpeed = 225;
+        motorSpeed = 225;
         break;
       case '9':
-        //motorSpeed = 240;
+        motorSpeed = 240;
         break;
       case 'q': 
-        //motorSpeed = 255;
+        motorSpeed = 255;
         break;
       default: 
+        stopMotors();
         break;
   }
 }

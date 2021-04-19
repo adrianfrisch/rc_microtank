@@ -19,8 +19,7 @@ void enableMotors(){
   pinMode(in1, OUTPUT);
   pinMode(in2, OUTPUT);
   pinMode(in3, OUTPUT);
-  pinMode(in4, OUTPUT);
-  TCCR1B = TCCR1B & B11111000 | B00000101;
+  pinMode(in4, OUTPUT);  
 }
 
 void goLeft(){

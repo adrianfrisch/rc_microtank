@@ -1,6 +1,8 @@
 # rc_microtank
 Arduino Code for the RC controlled Microtank
-<a href="https://drive.google.com/uc?export=view&id=1334GY6rUDta5F0j1D3IIxgwWuF2fBBTM"><img src="https://drive.google.com/uc?export=view&id=1334GY6rUDta5F0j1D3IIxgwWuF2fBBTM" style="width: 480px; max-width: 100%; height: auto" title="Click for the larger version." /></a>
+<a href="https://drive.google.com/uc?export=view&id=13jPakLTa89Bc7pzKFUDFo72GJchOpb2N"><img src="https://drive.google.com/uc?export=view&id=13jPakLTa89Bc7pzKFUDFo72GJchOpb2N" style="width: 480px; max-width: 100%; height: auto" title="Click for the larger version." /></a>
+
+The image shows an early version of the microtank. The battery has been swapped to a 2S LiPo in the meantime. 
 
 ## Remark
 This is work in progress. I currently assembling the hardware. Code will follow progress on the hardware.
@@ -16,7 +18,15 @@ into a "micro tank".
 - Arduino Nano as Brains
 - Make it small enough to be printed on almost any printer
 - Make it remote controlled via Bluetooth
-- Autonomous mode driveing using an ultrasonic range finder to detect obstacles
+- Autonomous mode driving using an ultrasonic range finder to detect obstacles
+
+## Materials required
+- Print parts
+- Arduino Nano
+- HC-05 Bluetooth module
+- L298N dual motor driver
+- 2 gear motors e.g. Adafruit-DC-Gearbox-Motor-TT or similar
+- M3 Rods nuts and washers 
 
 ## Wiring
 The motor power supply goes on the 12V and GND pins of the L298N. The GND of the power supply and the Arduino need to be also connected.
@@ -33,11 +43,19 @@ Arduino is connected as follows:
 | 5V        | 5V          |
 | GND       | GND         |
 
+The HC-05 modul for the communication is connected as follows:
+| HC05 | Arduino |
+| --- | --- |
+| 5V | 5V |
+| Gnd | Gnd |
+| RX | D3 |
+| TX | D2 |
 
 
 
 ## Progression
 2021-04-08: Initial setup of code. 
+2021-04-12: Manual steering via Bluetooth completed. Using App [Bluetooth RC Controller](https://play.google.com/store/apps/details?id=braulio.calle.bluetoothRCcontroller).
 
 ## 3D-Printfiles
-You can find the files for the microtank on [https://www.thingiverse.com/thing:4820194](Thingiverse).
+You can find the files for the microtank on [Thingiverse](https://www.thingiverse.com/thing:4820194).

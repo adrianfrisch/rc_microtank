@@ -6,7 +6,7 @@ SoftwareSerial btSerial(2,3);
 // Startup with standard command 'D' -> Disconnected
 byte input = 'D';
 // Last bluetooth command reception time
-int lastActive;
+unsigned long lastActive;
 
 void setup()
 {
@@ -30,11 +30,15 @@ void loop(){
     // Read the new command
     input = btSerial.read();
     // Mirror the command to the PC Serial
-    Serial.write(input);
+    //Serial.write(input);
     // And execute.
     executeCommand(input);
   }
-  if (lastActive + 2000 < millis()){
+  if (millis() - lastActive > 2000){
+    Serial.print(lastActive);
+    Serial.write(" - ");
+    Serial.print(millis());
+    Serial.write('\n');
     // Timeout because of disconnect. Reset to disconnected and execute.
     input = 'D';
     executeCommand(input);

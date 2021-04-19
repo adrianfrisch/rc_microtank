@@ -20,6 +20,7 @@ void enableMotors(){
   pinMode(in2, OUTPUT);
   pinMode(in3, OUTPUT);
   pinMode(in4, OUTPUT);
+  TCCR1B = TCCR1B & B11111000 | B00000101;
 }
 
 void goLeft(){
@@ -107,8 +108,15 @@ void stopMotors(){
     analogWrite(enB, 0);
 }
 
+byte lastInput = 'D';
 
 void executeCommand(byte input){
+  if (input == lastInput)
+    return;
+  lastInput = input;
+  Serial.write("New command");
+  Serial.write(input);
+  Serial.write('\n');
   switch (input){
       case 'D': // Disconnected Phone. Stop car.
         stopMotors();

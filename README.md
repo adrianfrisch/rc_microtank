@@ -1,8 +1,6 @@
 # rc_microtank
 Arduino Code for the RC controlled Microtank
-<a href="https://drive.google.com/uc?export=view&id=13jPakLTa89Bc7pzKFUDFo72GJchOpb2N"><img src="https://drive.google.com/uc?export=view&id=13jPakLTa89Bc7pzKFUDFo72GJchOpb2N" style="width: 480px; max-width: 100%; height: auto" title="Click for the larger version." /></a>
-
-The image shows an early version of the microtank. The battery has been swapped to a 2S LiPo in the meantime. 
+<a href="https://drive.google.com/uc?export=view&id=13sXFCwcgJ3NBBF7Vqo1msWkTlgnKhG09"><img src="https://drive.google.com/uc?export=view&id=13sXFCwcgJ3NBBF7Vqo1msWkTlgnKhG09" style="width: 480px; max-width: 100%; height: auto" title="Click for the larger version." /></a>
 
 ## Remark
 This is work in progress. I currently assembling the hardware. Code will follow progress on the hardware.
